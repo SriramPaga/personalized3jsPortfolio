@@ -1,10 +1,15 @@
 import { useState } from 'react';
-import { lazy,Suspense } from 'react';
-import Hero from './components/Hero';
+import { lazy, Suspense } from 'react';
+
+// import Hero from './components/Hero';
 // import Who from './components/Who';
-import Works from './components/Works';
-import Contact from './components/Contact';
-import Loading from './components/Loading'
+// import Works from './components/Works';
+// import Contact from './components/Contact';
+import Loading from './components/Loading';
+
+const Hero = lazy(() => import('./components/Hero'));
+const Works = lazy(() => import('./components/Works'));
+const Contact = lazy(() => import('./components/Contact'));
 const Who = lazy(() => import('./components/Who'));
 
 import styled from 'styled-components';
@@ -27,12 +32,12 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <Hero />
       <Suspense fallback={<Loading />}>
+        <Hero />
         <Who />
+        <Works />
+        <Contact />
       </Suspense>
-      <Works />
-      <Contact />
       {/* <Test /> */}
     </Container>
   );

@@ -12,7 +12,8 @@ const workList = [
   // 'Social Media',
 ];
 const Section = styled.div`
-  background-color: #244855;
+  /* background-color: #244855; */
+  background-color: #1a1c25;
 
   height: 100vh;
   scroll-snap-align: center;
@@ -39,8 +40,9 @@ const Left = styled.div`
   display: flex;
   align-items: center;
   @media only screen and (max-width: 760px) {
-    padding: 20px;
-    justify-content: center;
+    padding: 10px;
+    max-height: 30%;
+    
   }
 `;
 const List = styled.ul`
@@ -71,7 +73,7 @@ const ListItem = styled.li`
     position: absolute;
     top: 0;
     left: 0;
-    color: #e64833;
+    color: #75e2dd;
     /* color: #90aead; */
     width: 0px;
     overflow: hidden;
@@ -92,13 +94,15 @@ const ListItem = styled.li`
 `;
 const Right = styled.div`
   flex: 1;
+  margin-top: 0px;
+
   /* position: relative; */
 `;
 
 const Works = () => {
   const [work, setWork] = useState('Web Dev');
   return (
-    <Section id='works'>
+    <Section id="works">
       <Container>
         <Left>
           <List>

@@ -6,9 +6,19 @@ import { Canvas } from '@react-three/fiber';
 import { TypeAnimation } from 'react-type-animation';
 import Cube from './Cube';
 // 2c3531, 116466 d9b08c ffcb9a d1e8e2
+
+// bg - 0e0a3c, 07456e, 009e9d, ceffea
 const Section = styled.div`
   height: 100vh;
-  background-color: #244855;
+  /* background-color: #244855; */
+  background-color: #1a1c25;
+  /* background: linear-gradient(
+    180deg,
+    rgba(0, 169, 242, 1) 0%,
+    rgba(11, 109, 201, 1) 30%,
+    rgba(23, 45, 157, 1) 100%
+  ); */
+
   scroll-snap-align: center;
   display: flex;
   flex-direction: column;
@@ -82,8 +92,10 @@ const Right = styled.div`
 `;
 
 const Title = styled.h1`
+  color: #66fcf1;
   font-size: 74px;
   margin: 0;
+
   @media only screen and (max-width: 760px) {
     text-align: center;
   }
@@ -100,8 +112,8 @@ const Line = styled.img`
 `;
 const Subtitle = styled.h2`
   font-size: 32px;
-  /* color: #f85050; */
-  color: #d9b08c;
+  color: #CDBFEE;
+  /* color: #d9b08c; */
   margin: 0;
 `;
 const Description = styled.p`
@@ -118,8 +130,9 @@ const Description = styled.p`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #e64833;
-  color: white;
+  /* background-color: #e64833; */
+  background-color: #087E8B;
+  color: #fdfdfd;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -150,7 +163,7 @@ const Img = styled.img`
 
 const Hero = () => {
   return (
-    <Section id='HeroSection'>
+    <Section id="HeroSection">
       <Navbar />
       <Container>
         <Left>

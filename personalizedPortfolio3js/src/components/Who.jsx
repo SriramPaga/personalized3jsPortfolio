@@ -5,10 +5,14 @@ import Navbar from './Navbar';
 import { Canvas } from '@react-three/fiber';
 import { styled } from 'styled-components';
 import Cube from './Cube';
+
+
+
 import { MeshDistortMaterial, Sphere, OrbitControls } from '@react-three/drei';
 const Section = styled.div`
-  background-color: #90aead;
+  /* background-color: #90aead; */
   /* background-color: #244855; */
+  background-color: #1a1c25;
 
   height: 100vh;
   scroll-snap-align: center;
@@ -66,11 +70,12 @@ const Right = styled.div`
 `;
 
 const Title = styled.h1`
-  color: #fbe9d0;
+  color: #c5c6c7;
   font-size: 74px;
   margin: 0;
+  font-family: 'Poppins';
   @media only screen and (max-width: 760px) {
-    font-size: 60px;
+    font-size: 55px;
   }
 `;
 const WhatWeDo = styled.div`
@@ -85,21 +90,23 @@ const Line = styled.img`
   margin: 0;
 `;
 const Subtitle = styled.h2`
-  color: #e64833;
+  color: #CDBFEE;
   margin: 0;
 `;
 const Description = styled.p`
   font-size: 24px;
   /* color: #874f41; */
-  color: #fbe9d0;
-
+  color: #c5c6c7;
   margin: 0;
   text-align: justify;
+  @media only screen and (max-width: 760px) {
+    font-size: 18px;
+  }
 `;
 const Button = styled.button`
   width: 150px;
   padding: 10px;
-  background-color: #e64833;
+  background-color: #D62246;
   color: white;
   border: none;
   border-radius: 10px;
@@ -107,7 +114,7 @@ const Button = styled.button`
   margin: 0;
   &:hover {
     transition: ease-in-out 0.5s;
-    background-color: #e64833;
+    background-color: #931909;
   }
 `;
 
@@ -131,8 +138,7 @@ const Img = styled.img`
   @media only screen and (max-width: 760px) {
     width: 300px;
     height: 300px;
-  clip-path: circle(45%);
-
+    clip-path: circle(45%);
   }
   @keyframes animate {
     to {
@@ -153,7 +159,8 @@ const Who = () => {
 
             <Sphere args={[1, 100, 200]} scale={1.8}>
               <MeshDistortMaterial
-                color={'#d9b08c'}
+                // color={'#d9b08c'}
+                color={'#ceffea'}
                 attach={'material'}
                 distort={0.5}
                 speed={2}
@@ -181,8 +188,8 @@ const Who = () => {
             href="https://drive.google.com/file/d/17JRJlfdAy-2ya_XOEO_BhYGhbkDs-vrZ/view?usp=sharing"
             target="_blank"
           >
-            {' '}
-            <Button>Check Resume</Button>
+          
+            <Button> Check Resume</Button>
           </ButtonLink>
         </Right>
       </Container>

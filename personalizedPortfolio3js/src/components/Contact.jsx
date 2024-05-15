@@ -8,7 +8,8 @@ import emailjs from '@emailjs/browser';
 const Section = styled.div`
   height: 100vh;
   /* background-color: #254e58; */
-  background-color: #90aead;
+  /* background-color: #90aead; */
+  background-color: #1a1c25;
   scroll-snap-align: center;
 `;
 const Container = styled.div`
@@ -24,12 +25,9 @@ const Container = styled.div`
 const Left = styled.div`
   flex: 1;
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
   justify-content: flex-end;
-  /* gap: 20px; */
   @media only screen and (max-width: 760px) {
-    /* align-items: center; */
     justify-content: center;
   }
 `;
@@ -61,7 +59,7 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   width: 300px;
   padding: 10px;
-  background-color: #e64833;
+  background-color: #087e8b;
   color: white;
   border: none;
   border-radius: 10px;
@@ -81,6 +79,7 @@ const Right = styled.div`
 const Contact = () => {
   const ref = useRef();
   const [success, setSuccess] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -91,6 +90,11 @@ const Contact = () => {
         () => {
           console.log('SUCCESS!');
           setSuccess(true);
+          ref.current?.reset();
+          setTimeout(() => {
+            setSuccess(false);
+            console.log('inside timeout');
+          }, 8000);
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -106,11 +110,22 @@ const Contact = () => {
           <Form ref={ref} onSubmit={handleSubmit}>
             {' '}
             <Title>Contact</Title>
-            <Input placeholder="Name" name="name"></Input>
-            <Input placeholder="Name" name="email"></Input>
-            <TextArea placeholder="Name" name="message" rows={10}></TextArea>
+            <Input type="text" required placeholder="Name" name="name"></Input>
+            <Input
+              type="email"
+              required
+              placeholder="name@email.ext"
+              name="email"
+            ></Input>
+            <TextArea
+              required
+              placeholder="Message"
+              name="message"
+              rows={10}
+            ></TextArea>
             <Button type="submit">Send</Button>
-            {success && "your message has been sent, We'll get back soon!"}
+            {success &&
+              'Ding! Your message is safely in my inbox. In the meantime, dive into my portfolio and see how I can turn your ideas into reality.'}
           </Form>
         </Left>
         <Right className="map">

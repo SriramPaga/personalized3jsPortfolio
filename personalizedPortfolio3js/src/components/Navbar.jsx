@@ -68,7 +68,7 @@ const Icon = styled.img`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #f02547;
+  background-color: #D62246;
   color: white;
   border: none;
   border-radius: 10px;
