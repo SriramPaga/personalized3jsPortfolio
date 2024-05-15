@@ -2,7 +2,7 @@
   "name": "personalizedportfolio3js",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://srirampaga.github.io/",
+  "homepage": ".",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
